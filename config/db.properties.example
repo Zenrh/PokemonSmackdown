@@ -1,0 +1,6 @@
+# Example only. Database settings in the app can create config/db.properties.
+# SID connection matching the supplied SQL Developer screenshot.
+# Service-name alternative: jdbc:oracle:thin:@//localhost:1521/XEPDB1
+db.url=jdbc:oracle:thin:@localhost:1521:xe
+db.user=
+db.password=

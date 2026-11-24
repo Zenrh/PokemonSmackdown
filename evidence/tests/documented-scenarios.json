@@ -1,0 +1,343 @@
+{
+  "T01": {
+    "scenario": "Create and read ordered team",
+    "input_or_steps": "Create First party with IDs [25,1,151].",
+    "expected": "Generated ID, version 0 and original order are read back.",
+    "actual": "PASS",
+    "recorded_run_date": "2026-11-22",
+    "test_class": "com.pokemon.battle.DatabaseIntegrationTest",
+    "test_methods": [
+      "createAndReadPreservesOrder"
+    ],
+    "evidence": "verified-test-results.xml"
+  },
+  "T02": {
+    "scenario": "Six-member boundary",
+    "input_or_steps": "Save IDs [1,2,3,4,5,6].",
+    "expected": "All six slots persist.",
+    "actual": "PASS",
+    "recorded_run_date": "2026-11-22",
+    "test_class": "com.pokemon.battle.DatabaseIntegrationTest",
+    "test_methods": [
+      "allSixSlotsPersist"
+    ],
+    "evidence": "verified-test-results.xml"
+  },
+  "T03": {
+    "scenario": "Empty and seventh member",
+    "input_or_steps": "Try [] and seven distinct IDs.",
+    "expected": "ValidationException; no invalid roster saved.",
+    "actual": "PASS",
+    "recorded_run_date": "2026-11-22",
+    "test_class": "com.pokemon.battle.DatabaseIntegrationTest",
+    "test_methods": [
+      "emptyPartyRejected",
+      "seventhMemberRejected"
+    ],
+    "evidence": "verified-test-results.xml"
+  },
+  "T04": {
+    "scenario": "Duplicate and invalid members",
+    "input_or_steps": "Try [1,1], ID 152 and a null member.",
+    "expected": "All requests rejected.",
+    "actual": "PASS",
+    "recorded_run_date": "2026-11-22",
+    "test_class": "com.pokemon.battle.DatabaseIntegrationTest",
+    "test_methods": [
+      "duplicateMemberRejected",
+      "invalidPokemonIdRejected",
+      "nullPokemonIdRejected"
+    ],
+    "evidence": "verified-test-results.xml"
+  },
+  "T05": {
+    "scenario": "Name boundaries",
+    "input_or_steps": "Try blank, 81-character and control-character names.",
+    "expected": "ValidationException for each invalid name.",
+    "actual": "PASS",
+    "recorded_run_date": "2026-11-22",
+    "test_class": "com.pokemon.battle.DatabaseIntegrationTest",
+    "test_methods": [
+      "blankNameRejected",
+      "longNameRejected",
+      "controlCharacterRejected"
+    ],
+    "evidence": "verified-test-results.xml"
+  },
+  "T06": {
+    "scenario": "Normalized duplicate name",
+    "input_or_steps": "Save Champions with outer spaces, then champions.",
+    "expected": "Second save conflicts; one team remains.",
+    "actual": "PASS",
+    "recorded_run_date": "2026-11-22",
+    "test_class": "com.pokemon.battle.DatabaseIntegrationTest",
+    "test_methods": [
+      "duplicateNamesIgnoreCaseAndOuterSpaces"
+    ],
+    "evidence": "verified-test-results.xml"
+  },
+  "T07": {
+    "scenario": "Quotes and SQL-like input",
+    "input_or_steps": "Round-trip Ash's team; search for a SQL-like quote expression.",
+    "expected": "Quoted name survives; search text cannot broaden query.",
+    "actual": "PASS",
+    "recorded_run_date": "2026-11-22",
+    "test_class": "com.pokemon.battle.DatabaseIntegrationTest",
+    "test_methods": [
+      "quotedNameRoundTrips",
+      "injectionTextIsLiteral"
+    ],
+    "evidence": "verified-test-results.xml"
+  },
+  "T08": {
+    "scenario": "Literal wildcard and case search",
+    "input_or_steps": "Search %_ in 100%_ready; search LECTR in Electric.",
+    "expected": "Literal wildcard substring and case-insensitive match work.",
+    "actual": "PASS",
+    "recorded_run_date": "2026-11-22",
+    "test_class": "com.pokemon.battle.DatabaseIntegrationTest",
+    "test_methods": [
+      "wildcardCharactersAreLiteral",
+      "searchIsCaseInsensitive"
+    ],
+    "evidence": "verified-test-results.xml"
+  },
+  "T09": {
+    "scenario": "Replace and fresh load",
+    "input_or_steps": "Rename Before to After, replace members, then load by ID.",
+    "expected": "Same ID, incremented version and fresh ordered members.",
+    "actual": "PASS",
+    "recorded_run_date": "2026-11-22",
+    "test_class": "com.pokemon.battle.DatabaseIntegrationTest",
+    "test_methods": [
+      "updateReplacesNameAndMembersAtomically",
+      "loadReadsCurrentSavedVersion"
+    ],
+    "evidence": "verified-test-results.xml"
+  },
+  "T10": {
+    "scenario": "Stale concurrent edit",
+    "input_or_steps": "Update a team, then update or delete using its old version.",
+    "expected": "ConflictException protects the newer record.",
+    "actual": "PASS",
+    "recorded_run_date": "2026-11-22",
+    "test_class": "com.pokemon.battle.DatabaseIntegrationTest",
+    "test_methods": [
+      "staleUpdateRejected",
+      "staleDeleteRejected"
+    ],
+    "evidence": "verified-test-results.xml"
+  },
+  "T11": {
+    "scenario": "Delete and repeated delete",
+    "input_or_steps": "Delete a saved team, repeat delete and try loading it.",
+    "expected": "Members cascade; repeat conflicts; load reports not found.",
+    "actual": "PASS",
+    "recorded_run_date": "2026-11-22",
+    "test_class": "com.pokemon.battle.DatabaseIntegrationTest",
+    "test_methods": [
+      "deletingTeamCascadesMembers",
+      "repeatedDeleteReportsConflict",
+      "loadingDeletedTeamReportsNotFound"
+    ],
+    "evidence": "verified-test-results.xml"
+  },
+  "T12": {
+    "scenario": "Create rollback",
+    "input_or_steps": "Force a child-member insert failure after the header insert.",
+    "expected": "No orphan team header is committed.",
+    "actual": "PASS",
+    "recorded_run_date": "2026-11-22",
+    "test_class": "com.pokemon.battle.DatabaseIntegrationTest",
+    "test_methods": [
+      "failedMemberInsertRollsBackNewHeader"
+    ],
+    "evidence": "verified-test-results.xml"
+  },
+  "T13": {
+    "scenario": "Replacement rollback",
+    "input_or_steps": "Force replacement-member failure or a duplicate rename.",
+    "expected": "Original name, version and members remain intact.",
+    "actual": "PASS",
+    "recorded_run_date": "2026-11-22",
+    "test_class": "com.pokemon.battle.DatabaseIntegrationTest",
+    "test_methods": [
+      "failedReplacementRestoresOldNameVersionAndMembers",
+      "failedRenameDoesNotChangeMembers"
+    ],
+    "evidence": "verified-test-results.xml"
+  },
+  "T14": {
+    "scenario": "Battle snapshots and independence",
+    "input_or_steps": "Save both sides; delete an associated saved roster.",
+    "expected": "Original result rosters persist in history.",
+    "actual": "PASS",
+    "recorded_run_date": "2026-11-22",
+    "test_class": "com.pokemon.battle.DatabaseIntegrationTest",
+    "test_methods": [
+      "historySavesBothTeamSnapshots",
+      "battleHistorySurvivesDeletingSavedTeam"
+    ],
+    "evidence": "verified-test-results.xml"
+  },
+  "T15": {
+    "scenario": "Idempotent result retry",
+    "input_or_steps": "Save an identical result twice with the same UUID.",
+    "expected": "Only one result; precision-normalized retry succeeds.",
+    "actual": "PASS",
+    "recorded_run_date": "2026-11-22",
+    "test_class": "com.pokemon.battle.DatabaseIntegrationTest",
+    "test_methods": [
+      "retryDoesNotDuplicateBattle",
+      "oraclePrecisionNormalizedForRetry"
+    ],
+    "evidence": "verified-test-results.xml"
+  },
+  "T16": {
+    "scenario": "Conflicting key and result rollback",
+    "input_or_steps": "Reuse UUID with different data; force child insert failure.",
+    "expected": "Conflict for changed payload; failed write leaves no header.",
+    "actual": "PASS",
+    "recorded_run_date": "2026-11-22",
+    "test_class": "com.pokemon.battle.DatabaseIntegrationTest",
+    "test_methods": [
+      "reusedKeyCannotOverwriteDifferentResult",
+      "failedBattleMembersRollBackHeader"
+    ],
+    "evidence": "verified-test-results.xml"
+  },
+  "T17": {
+    "scenario": "Dates and outcome filtering",
+    "input_or_steps": "Query a selected outcome and a range ending on a result day.",
+    "expected": "Filter matches; whole end day included; next day excluded.",
+    "actual": "PASS",
+    "recorded_run_date": "2026-11-22",
+    "test_class": "com.pokemon.battle.DatabaseIntegrationTest",
+    "test_methods": [
+      "reportFiltersOutcome",
+      "reportIncludesEntireEndDateButNotNextDay"
+    ],
+    "evidence": "verified-test-results.xml"
+  },
+  "T18": {
+    "scenario": "Invalid dates and times",
+    "input_or_steps": "Use reversed date range or end-before-start battle time.",
+    "expected": "ValidationException.",
+    "actual": "PASS",
+    "recorded_run_date": "2026-11-22",
+    "test_class": "com.pokemon.battle.DatabaseIntegrationTest",
+    "test_methods": [
+      "invalidDateRangeRejected",
+      "invalidBattleTimesRejected"
+    ],
+    "evidence": "verified-test-results.xml"
+  },
+  "T19": {
+    "scenario": "Win percentage",
+    "input_or_steps": "Report wins, losses and fled results.",
+    "expected": "FLED excluded from denominator.",
+    "actual": "PASS",
+    "recorded_run_date": "2026-11-22",
+    "test_class": "com.pokemon.battle.DatabaseIntegrationTest",
+    "test_methods": [
+      "winRateExcludesFled"
+    ],
+    "evidence": "verified-test-results.xml"
+  },
+  "T20": {
+    "scenario": "Failure and early validation",
+    "input_or_steps": "Simulate SQL state 08006; submit invalid input to guarded factory.",
+    "expected": "Actionable DataAccessException; invalid input opens no connection.",
+    "actual": "PASS",
+    "recorded_run_date": "2026-11-22",
+    "test_class": "com.pokemon.battle.DatabaseIntegrationTest",
+    "test_methods": [
+      "outageBecomesActionableApplicationFailure",
+      "invalidInputNeverOpensDatabase"
+    ],
+    "evidence": "verified-test-results.xml"
+  },
+  "T21": {
+    "scenario": "Separate JVM persistence",
+    "input_or_steps": "Write team, launch another JVM, reload from temporary disk H2.",
+    "expected": "Data survives process boundary.",
+    "actual": "PASS",
+    "recorded_run_date": "2026-11-22",
+    "test_class": "com.pokemon.battle.DatabaseIntegrationTest",
+    "test_methods": [
+      "persistenceAcrossSeparateJvm(Path)"
+    ],
+    "evidence": "verified-test-results.xml"
+  },
+  "T22": {
+    "scenario": "HP and move safety",
+    "input_or_steps": "Apply large damage/heal, negative input, fifth move and repeated PP use.",
+    "expected": "HP bounded; invalid inputs rejected; PP stops at zero.",
+    "actual": "PASS",
+    "recorded_run_date": "2026-11-22",
+    "test_class": "com.pokemon.battle.ModelReliabilityTest",
+    "test_methods": [
+      "hpClampsToZero",
+      "healingCannotOverflow",
+      "negativeDamageRejected",
+      "negativeHealingRejected",
+      "fifthMoveRejected",
+      "ppStopsAtZero"
+    ],
+    "evidence": "verified-test-results.xml"
+  },
+  "T23": {
+    "scenario": "No PP and immunity",
+    "input_or_steps": "Exhaust PP then use fallback; attempt it early; attack an immune type.",
+    "expected": "Fallback only when needed; immunity causes zero damage.",
+    "actual": "PASS",
+    "recorded_run_date": "2026-11-22",
+    "test_class": "com.pokemon.battle.ModelReliabilityTest",
+    "test_methods": [
+      "noPpFallbackAllowsBattleToContinue",
+      "fallbackRejectedWhenNormalPpRemain",
+      "immunityDoesNotDealMinimumDamage"
+    ],
+    "evidence": "verified-test-results.xml"
+  },
+  "T24": {
+    "scenario": "Background and repeat-action safety",
+    "input_or_steps": "Trigger UiTasks twice while the first task is running.",
+    "expected": "Work runs off EDT; completion on EDT; duplicate action ignored.",
+    "actual": "PASS",
+    "recorded_run_date": "2026-11-22",
+    "test_class": "com.pokemon.battle.UiTasksTest",
+    "test_methods": [
+      "databaseWorkLeavesEdtAndRepeatedActionIsIgnored"
+    ],
+    "evidence": "verified-test-results.xml"
+  },
+  "T25": {
+    "scenario": "Configuration safety",
+    "input_or_steps": "Validate SID/service URLs, missing credentials and embedded URL credentials.",
+    "expected": "Valid forms accepted; missing or embedded credentials rejected.",
+    "actual": "PASS",
+    "recorded_run_date": "2026-11-22",
+    "test_class": "com.pokemon.battle.DatabaseConfigTest",
+    "test_methods": [
+      "acceptsOracleSid",
+      "acceptsOracleServiceName",
+      "missingUsernameRejected",
+      "missingPasswordRejected",
+      "embeddedCredentialsInUrlAreRejected"
+    ],
+    "evidence": "verified-test-results.xml"
+  },
+  "T26": {
+    "scenario": "Live Oracle integration",
+    "input_or_steps": "Run opt-in Oracle CRUD, duplicate, rollback, history, retry and separate-JVM check.",
+    "expected": "Operations satisfy assertions on actual Oracle; test records cleaned up.",
+    "actual": "PASS",
+    "recorded_run_date": "2026-11-22",
+    "test_class": "com.pokemon.battle.OracleSmokeTest",
+    "test_methods": [
+      "oracleCrudRollbackHistoryAndRestart"
+    ],
+    "evidence": "verified-test-results.xml"
+  }
+}

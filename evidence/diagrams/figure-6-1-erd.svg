@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1260" viewBox="0 0 1400 1260">
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0 1 L9 5 L0 9" fill="none" stroke="#334155" stroke-width="1.6"/></marker><marker id="triangle" markerWidth="15" markerHeight="15" refX="13" refY="7" orient="auto"><path d="M1 1 L13 7 L1 13 Z" fill="white" stroke="#334155" stroke-width="1.4"/></marker></defs>
+<rect width="100%" height="100%" fill="white"/>
+<text x="700" y="38" font-family="Arial, sans-serif" font-size="29" font-weight="700" fill="#111111" text-anchor="middle">Oracle game database entity relationship diagram</text>
+<rect x="25" y="85" width="640" height="285" rx="4" fill="#E9EFF5" stroke="#536273" stroke-width="2"/>
+<path d="M25 134 H665" stroke="#536273" stroke-width="1.5"/>
+<text x="345.0" y="118" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#111111" text-anchor="middle">ps_team</text>
+<text x="42" y="168" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">PK id NUMBER(19) IDENTITY</text>
+<text x="42" y="201" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">name VARCHAR2(80 CHAR) NOT NULL</text>
+<text x="42" y="234" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">UQ name_key VARCHAR2(80 CHAR) NOT NULL</text>
+<text x="42" y="267" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">row_version NUMBER(10) DEFAULT 0 NOT NULL</text>
+<text x="42" y="300" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">CHECK nonblank name and nonnegative version</text>
+<text x="42" y="333" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">name_key is normalized by the application</text>
+<rect x="735" y="85" width="640" height="285" rx="4" fill="#F0EAF7" stroke="#536273" stroke-width="2"/>
+<path d="M735 134 H1375" stroke="#536273" stroke-width="1.5"/>
+<text x="1055.0" y="118" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#111111" text-anchor="middle">ps_battle</text>
+<text x="752" y="168" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">PK battle_key VARCHAR2(36 CHAR)</text>
+<text x="752" y="201" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">team_label VARCHAR2(80 CHAR) NOT NULL</text>
+<text x="752" y="234" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">outcome VARCHAR2(8 CHAR) NOT NULL</text>
+<text x="752" y="267" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">player_turns NUMBER(10) NOT NULL</text>
+<text x="752" y="300" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">started_at TIMESTAMP NOT NULL</text>
+<text x="752" y="333" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">ended_at TIMESTAMP NOT NULL</text>
+<rect x="25" y="545" width="640" height="300" rx="4" fill="#E9EFF5" stroke="#536273" stroke-width="2"/>
+<path d="M25 594 H665" stroke="#536273" stroke-width="1.5"/>
+<text x="345.0" y="578" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#111111" text-anchor="middle">ps_team_member</text>
+<text x="42" y="628" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">PK (team_id, slot_no)</text>
+<text x="42" y="661" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">FK team_id -&gt; ps_team.id ON DELETE CASCADE</text>
+<text x="42" y="694" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">slot_no NUMBER(1) NOT NULL CHECK 1..6</text>
+<text x="42" y="727" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">pokemon_id NUMBER(3) NOT NULL CHECK 1..151</text>
+<text x="42" y="760" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">UQ (team_id, pokemon_id)</text>
+<text x="42" y="793" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">Service requires 1..6 members per saved team</text>
+<rect x="735" y="545" width="640" height="300" rx="4" fill="#F0EAF7" stroke="#536273" stroke-width="2"/>
+<path d="M735 594 H1375" stroke="#536273" stroke-width="1.5"/>
+<text x="1055.0" y="578" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#111111" text-anchor="middle">ps_battle_member</text>
+<text x="752" y="628" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">PK (battle_key, side_code, slot_no)</text>
+<text x="752" y="661" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">FK battle_key -&gt; ps_battle.battle_key CASCADE</text>
+<text x="752" y="694" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">side_code CHAR(1) CHECK P or E</text>
+<text x="752" y="727" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">slot_no NUMBER(1) NOT NULL CHECK 1..6</text>
+<text x="752" y="760" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">pokemon_id NUMBER(3) NOT NULL CHECK 1..151</text>
+<text x="752" y="793" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">UQ (battle_key, side_code, pokemon_id)</text>
+<polyline points="345,370 345,545" fill="none" stroke="#334155" stroke-width="2.5" stroke-dasharray="0" marker-end="url(#arrow)"/>
+<text x="65" y="460" font-family="Arial, sans-serif" font-size="22" font-weight="400" fill="#111111" text-anchor="start">1 parent : 0..6 child rows</text>
+<polyline points="1055,370 1055,545" fill="none" stroke="#334155" stroke-width="2.5" stroke-dasharray="0" marker-end="url(#arrow)"/>
+<text x="775" y="460" font-family="Arial, sans-serif" font-size="22" font-weight="400" fill="#111111" text-anchor="start">1 parent : 0..12 child rows</text>
+<text x="35" y="930" font-family="Arial, sans-serif" font-size="24" font-weight="400" fill="#111111" text-anchor="start">Battle checks: outcome is WIN, LOSS or FLED; player_turns &gt;= 0; ended_at &gt;= started_at.</text>
+<text x="35" y="980" font-family="Arial, sans-serif" font-size="24" font-weight="400" fill="#111111" text-anchor="start">Index: ps_battle_ended_ix on ps_battle(ended_at). Java records normalize timestamps to microseconds.</text>
+<text x="35" y="1040" font-family="Arial, sans-serif" font-size="24" font-weight="400" fill="#111111" text-anchor="start">Saved teams and battle history have no foreign key between them. Deleting a saved team keeps history.</text>
+<text x="35" y="1095" font-family="Arial, sans-serif" font-size="24" font-weight="400" fill="#111111" text-anchor="start">Pokemon IDs refer to the hardcoded Kanto roster. No separate Pokemon catalog table is implemented.</text>
+<text x="35" y="1150" font-family="Arial, sans-serif" font-size="24" font-weight="400" fill="#111111" text-anchor="start">Database child minima are zero. Services enforce 1..6 player and 1..6 enemy members per saved battle.</text>
+<text x="35" y="1210" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#111111" text-anchor="start">PK = primary key     FK = foreign key     UQ = unique constraint</text>
+</svg>

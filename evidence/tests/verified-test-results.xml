@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testsuites xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" tests="66" failures="0" errors="0" skipped="0">
+  <testsuite xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="com.pokemon.battle.DatabaseConfigTest" time="0.149" tests="6" errors="0" skipped="0" failures="0">
+    <testcase name="missingPasswordRejected" classname="com.pokemon.battle.DatabaseConfigTest" time="0.028" />
+    <testcase name="embeddedCredentialsInUrlAreRejected" classname="com.pokemon.battle.DatabaseConfigTest" time="0.001" />
+    <testcase name="acceptsOracleSid" classname="com.pokemon.battle.DatabaseConfigTest" time="0.003" />
+    <testcase name="settingsRoundTripLocally(Path)" classname="com.pokemon.battle.DatabaseConfigTest" time="0.083" />
+    <testcase name="acceptsOracleServiceName" classname="com.pokemon.battle.DatabaseConfigTest" time="0.002" />
+    <testcase name="missingUsernameRejected" classname="com.pokemon.battle.DatabaseConfigTest" time="0.001" />
+  </testsuite>
+  <testsuite xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="com.pokemon.battle.DatabaseIntegrationTest" time="1.974" tests="41" errors="0" skipped="0" failures="0">
+    <testcase name="invalidDateRangeRejected" classname="com.pokemon.battle.DatabaseIntegrationTest" time="0.432" />
+    <testcase name="allSixSlotsPersist" classname="com.pokemon.battle.DatabaseIntegrationTest" time="0.031" />
+    <testcase name="reusedKeyCannotOverwriteDifferentResult" classname="com.pokemon.battle.DatabaseIntegrationTest" time="0.082" />
+    <testcase name="loadingDeletedTeamReportsNotFound" classname="com.pokemon.battle.DatabaseIntegrationTest" time="0.069" />
+    <testcase name="historySavesBothTeamSnapshots" classname="com.pokemon.battle.DatabaseIntegrationTest" time="0.046" />
+    <testcase name="failedReplacementRestoresOldNameVersionAndMembers" classname="com.pokemon.battle.DatabaseIntegrationTest" time="0.052">
+    </testcase>
+    <testcase name="quotedNameRoundTrips" classname="com.pokemon.battle.DatabaseIntegrationTest" time="0.026" />
+    <testcase name="persistenceAcrossSeparateJvm(Path)" classname="com.pokemon.battle.DatabaseIntegrationTest" time="0.843" />
+    <testcase name="staleDeleteRejected" classname="com.pokemon.battle.DatabaseIntegrationTest" time="0.013" />
+    <testcase name="controlCharacterRejected" classname="com.pokemon.battle.DatabaseIntegrationTest" time="0.01" />
+    <testcase name="searchIsCaseInsensitive" classname="com.pokemon.battle.DatabaseIntegrationTest" time="0.011" />
+    <testcase name="invalidPokemonIdRejected" classname="com.pokemon.battle.DatabaseIntegrationTest" time="0.009" />
+    <testcase name="duplicateMemberRejected" classname="com.pokemon.battle.DatabaseIntegrationTest" time="0.009" />
+    <testcase name="injectionTextIsLiteral" classname="com.pokemon.battle.DatabaseIntegrationTest" time="0.011" />
+    <testcase name="updateReplacesNameAndMembersAtomically" classname="com.pokemon.battle.DatabaseIntegrationTest" time="0.011" />
+    <testcase name="reportFiltersOutcome" classname="com.pokemon.battle.DatabaseIntegrationTest" time="0.012" />
+    <testcase name="reportIncludesEntireEndDateButNotNextDay" classname="com.pokemon.battle.DatabaseIntegrationTest" time="0.011" />
+    <testcase name="repeatedDeleteReportsConflict" classname="com.pokemon.battle.DatabaseIntegrationTest" time="0.01" />
+    <testcase name="nullPokemonIdRejected" classname="com.pokemon.battle.DatabaseIntegrationTest" time="0.008" />
+    <testcase name="blankNameRejected" classname="com.pokemon.battle.DatabaseIntegrationTest" time="0.007" />
+    <testcase name="battleHistorySurvivesDeletingSavedTeam" classname="com.pokemon.battle.DatabaseIntegrationTest" time="0.011" />
+    <testcase name="outageBecomesActionableApplicationFailure" classname="com.pokemon.battle.DatabaseIntegrationTest" time="0.007">
+    </testcase>
+    <testcase name="invalidInputNeverOpensDatabase" classname="com.pokemon.battle.DatabaseIntegrationTest" time="0.007" />
+    <testcase name="invalidBattleTimesRejected" classname="com.pokemon.battle.DatabaseIntegrationTest" time="0.008" />
+    <testcase name="deletingTeamCascadesMembers" classname="com.pokemon.battle.DatabaseIntegrationTest" time="0.011" />
+    <testcase name="failedMemberInsertRollsBackNewHeader" classname="com.pokemon.battle.DatabaseIntegrationTest" time="0.01">
+    </testcase>
+    <testcase name="wildcardCharactersAreLiteral" classname="com.pokemon.battle.DatabaseIntegrationTest" time="0.01" />
+    <testcase name="longNameRejected" classname="com.pokemon.battle.DatabaseIntegrationTest" time="0.008" />
+    <testcase name="retryDoesNotDuplicateBattle" classname="com.pokemon.battle.DatabaseIntegrationTest" time="0.015" />
+    <testcase name="failedBattleMembersRollBackHeader" classname="com.pokemon.battle.DatabaseIntegrationTest" time="0.013" />
+    <testcase name="oraclePrecisionNormalizedForRetry" classname="com.pokemon.battle.DatabaseIntegrationTest" time="0.012" />
+    <testcase name="winRateExcludesFled" classname="com.pokemon.battle.DatabaseIntegrationTest" time="0.02" />
+    <testcase name="seventhMemberRejected" classname="com.pokemon.battle.DatabaseIntegrationTest" time="0.011" />
+    <testcase name="failedRenameDoesNotChangeMembers" classname="com.pokemon.battle.DatabaseIntegrationTest" time="0.014">
+    </testcase>
+    <testcase name="loadReadsCurrentSavedVersion" classname="com.pokemon.battle.DatabaseIntegrationTest" time="0.012" />
+    <testcase name="createAndReadPreservesOrder" classname="com.pokemon.battle.DatabaseIntegrationTest" time="0.01" />
+    <testcase name="schemaVerificationUsesAllFourTables" classname="com.pokemon.battle.DatabaseIntegrationTest" time="0.012" />
+    <testcase name="savedMembersCannotBeMutated" classname="com.pokemon.battle.DatabaseIntegrationTest" time="0.009" />
+    <testcase name="emptyPartyRejected" classname="com.pokemon.battle.DatabaseIntegrationTest" time="0.009" />
+    <testcase name="staleUpdateRejected" classname="com.pokemon.battle.DatabaseIntegrationTest" time="0.015" />
+    <testcase name="duplicateNamesIgnoreCaseAndOuterSpaces" classname="com.pokemon.battle.DatabaseIntegrationTest" time="0.009">
+    </testcase>
+  </testsuite>
+  <testsuite xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="com.pokemon.battle.ModelReliabilityTest" time="0.034" tests="17" errors="0" skipped="0" failures="0">
+    <testcase name="healingCannotOverflow" classname="com.pokemon.battle.ModelReliabilityTest" time="0.002" />
+    <testcase name="fifthMoveRejected" classname="com.pokemon.battle.ModelReliabilityTest" time="0.001" />
+    <testcase name="ppStopsAtZero" classname="com.pokemon.battle.ModelReliabilityTest" time="0.002" />
+    <testcase name="seventhTeamMemberRejected" classname="com.pokemon.battle.ModelReliabilityTest" time="0.001" />
+    <testcase name="fallbackRejectedWhenNormalPpRemain" classname="com.pokemon.battle.ModelReliabilityTest" time="0.002" />
+    <testcase name="eitherDefeatedTeamEndsBattle" classname="com.pokemon.battle.ModelReliabilityTest" time="0.0" />
+    <testcase name="faintedPokemonCannotSwitchIn" classname="com.pokemon.battle.ModelReliabilityTest" time="0.0" />
+    <testcase name="teamListIsProtected" classname="com.pokemon.battle.ModelReliabilityTest" time="0.0" />
+    <testcase name="negativeDamageRejected" classname="com.pokemon.battle.ModelReliabilityTest" time="0.002" />
+    <testcase name="immunityDoesNotDealMinimumDamage" classname="com.pokemon.battle.ModelReliabilityTest" time="0.004" />
+    <testcase name="noPpFallbackAllowsBattleToContinue" classname="com.pokemon.battle.ModelReliabilityTest" time="0.001" />
+    <testcase name="negativeHealingRejected" classname="com.pokemon.battle.ModelReliabilityTest" time="0.002" />
+    <testcase name="invalidAccuracyRejected" classname="com.pokemon.battle.ModelReliabilityTest" time="0.001" />
+    <testcase name="duplicateTeamMemberRejected" classname="com.pokemon.battle.ModelReliabilityTest" time="0.001" />
+    <testcase name="hpClampsToZero" classname="com.pokemon.battle.ModelReliabilityTest" time="0.0" />
+    <testcase name="zeroDefenseRejected" classname="com.pokemon.battle.ModelReliabilityTest" time="0.001" />
+    <testcase name="moveListIsProtected" classname="com.pokemon.battle.ModelReliabilityTest" time="0.001" />
+  </testsuite>
+  <testsuite xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="com.pokemon.battle.OracleSmokeTest" time="2.62" tests="1" errors="0" skipped="0" failures="0">
+    <testcase name="oracleCrudRollbackHistoryAndRestart" classname="com.pokemon.battle.OracleSmokeTest" time="2.618">
+    </testcase>
+  </testsuite>
+  <testsuite xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="com.pokemon.battle.UiTasksTest" time="0.128" tests="1" errors="0" skipped="0" failures="0">
+    <testcase name="databaseWorkLeavesEdtAndRepeatedActionIsIgnored" classname="com.pokemon.battle.UiTasksTest" time="0.127" />
+  </testsuite>
+</testsuites>

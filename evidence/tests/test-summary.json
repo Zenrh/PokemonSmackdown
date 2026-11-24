@@ -1,0 +1,387 @@
+{
+  "run_date": "2026-11-22",
+  "java": "21.0.11",
+  "database": "Oracle XE 21c plus H2 Oracle-mode isolated tests",
+  "suites": [
+    {
+      "class": "com.pokemon.battle.DatabaseConfigTest",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "timestamp": null,
+      "cases": [
+        {
+          "name": "missingPasswordRejected",
+          "time": "0.028",
+          "result": "PASS"
+        },
+        {
+          "name": "embeddedCredentialsInUrlAreRejected",
+          "time": "0.001",
+          "result": "PASS"
+        },
+        {
+          "name": "acceptsOracleSid",
+          "time": "0.003",
+          "result": "PASS"
+        },
+        {
+          "name": "settingsRoundTripLocally(Path)",
+          "time": "0.083",
+          "result": "PASS"
+        },
+        {
+          "name": "acceptsOracleServiceName",
+          "time": "0.002",
+          "result": "PASS"
+        },
+        {
+          "name": "missingUsernameRejected",
+          "time": "0.001",
+          "result": "PASS"
+        }
+      ]
+    },
+    {
+      "class": "com.pokemon.battle.DatabaseIntegrationTest",
+      "tests": 41,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "timestamp": null,
+      "cases": [
+        {
+          "name": "invalidDateRangeRejected",
+          "time": "0.432",
+          "result": "PASS"
+        },
+        {
+          "name": "allSixSlotsPersist",
+          "time": "0.031",
+          "result": "PASS"
+        },
+        {
+          "name": "reusedKeyCannotOverwriteDifferentResult",
+          "time": "0.082",
+          "result": "PASS"
+        },
+        {
+          "name": "loadingDeletedTeamReportsNotFound",
+          "time": "0.069",
+          "result": "PASS"
+        },
+        {
+          "name": "historySavesBothTeamSnapshots",
+          "time": "0.046",
+          "result": "PASS"
+        },
+        {
+          "name": "failedReplacementRestoresOldNameVersionAndMembers",
+          "time": "0.052",
+          "result": "PASS"
+        },
+        {
+          "name": "quotedNameRoundTrips",
+          "time": "0.026",
+          "result": "PASS"
+        },
+        {
+          "name": "persistenceAcrossSeparateJvm(Path)",
+          "time": "0.843",
+          "result": "PASS"
+        },
+        {
+          "name": "staleDeleteRejected",
+          "time": "0.013",
+          "result": "PASS"
+        },
+        {
+          "name": "controlCharacterRejected",
+          "time": "0.01",
+          "result": "PASS"
+        },
+        {
+          "name": "searchIsCaseInsensitive",
+          "time": "0.011",
+          "result": "PASS"
+        },
+        {
+          "name": "invalidPokemonIdRejected",
+          "time": "0.009",
+          "result": "PASS"
+        },
+        {
+          "name": "duplicateMemberRejected",
+          "time": "0.009",
+          "result": "PASS"
+        },
+        {
+          "name": "injectionTextIsLiteral",
+          "time": "0.011",
+          "result": "PASS"
+        },
+        {
+          "name": "updateReplacesNameAndMembersAtomically",
+          "time": "0.011",
+          "result": "PASS"
+        },
+        {
+          "name": "reportFiltersOutcome",
+          "time": "0.012",
+          "result": "PASS"
+        },
+        {
+          "name": "reportIncludesEntireEndDateButNotNextDay",
+          "time": "0.011",
+          "result": "PASS"
+        },
+        {
+          "name": "repeatedDeleteReportsConflict",
+          "time": "0.01",
+          "result": "PASS"
+        },
+        {
+          "name": "nullPokemonIdRejected",
+          "time": "0.008",
+          "result": "PASS"
+        },
+        {
+          "name": "blankNameRejected",
+          "time": "0.007",
+          "result": "PASS"
+        },
+        {
+          "name": "battleHistorySurvivesDeletingSavedTeam",
+          "time": "0.011",
+          "result": "PASS"
+        },
+        {
+          "name": "outageBecomesActionableApplicationFailure",
+          "time": "0.007",
+          "result": "PASS"
+        },
+        {
+          "name": "invalidInputNeverOpensDatabase",
+          "time": "0.007",
+          "result": "PASS"
+        },
+        {
+          "name": "invalidBattleTimesRejected",
+          "time": "0.008",
+          "result": "PASS"
+        },
+        {
+          "name": "deletingTeamCascadesMembers",
+          "time": "0.011",
+          "result": "PASS"
+        },
+        {
+          "name": "failedMemberInsertRollsBackNewHeader",
+          "time": "0.01",
+          "result": "PASS"
+        },
+        {
+          "name": "wildcardCharactersAreLiteral",
+          "time": "0.01",
+          "result": "PASS"
+        },
+        {
+          "name": "longNameRejected",
+          "time": "0.008",
+          "result": "PASS"
+        },
+        {
+          "name": "retryDoesNotDuplicateBattle",
+          "time": "0.015",
+          "result": "PASS"
+        },
+        {
+          "name": "failedBattleMembersRollBackHeader",
+          "time": "0.013",
+          "result": "PASS"
+        },
+        {
+          "name": "oraclePrecisionNormalizedForRetry",
+          "time": "0.012",
+          "result": "PASS"
+        },
+        {
+          "name": "winRateExcludesFled",
+          "time": "0.02",
+          "result": "PASS"
+        },
+        {
+          "name": "seventhMemberRejected",
+          "time": "0.011",
+          "result": "PASS"
+        },
+        {
+          "name": "failedRenameDoesNotChangeMembers",
+          "time": "0.014",
+          "result": "PASS"
+        },
+        {
+          "name": "loadReadsCurrentSavedVersion",
+          "time": "0.012",
+          "result": "PASS"
+        },
+        {
+          "name": "createAndReadPreservesOrder",
+          "time": "0.01",
+          "result": "PASS"
+        },
+        {
+          "name": "schemaVerificationUsesAllFourTables",
+          "time": "0.012",
+          "result": "PASS"
+        },
+        {
+          "name": "savedMembersCannotBeMutated",
+          "time": "0.009",
+          "result": "PASS"
+        },
+        {
+          "name": "emptyPartyRejected",
+          "time": "0.009",
+          "result": "PASS"
+        },
+        {
+          "name": "staleUpdateRejected",
+          "time": "0.015",
+          "result": "PASS"
+        },
+        {
+          "name": "duplicateNamesIgnoreCaseAndOuterSpaces",
+          "time": "0.009",
+          "result": "PASS"
+        }
+      ]
+    },
+    {
+      "class": "com.pokemon.battle.ModelReliabilityTest",
+      "tests": 17,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "timestamp": null,
+      "cases": [
+        {
+          "name": "healingCannotOverflow",
+          "time": "0.002",
+          "result": "PASS"
+        },
+        {
+          "name": "fifthMoveRejected",
+          "time": "0.001",
+          "result": "PASS"
+        },
+        {
+          "name": "ppStopsAtZero",
+          "time": "0.002",
+          "result": "PASS"
+        },
+        {
+          "name": "seventhTeamMemberRejected",
+          "time": "0.001",
+          "result": "PASS"
+        },
+        {
+          "name": "fallbackRejectedWhenNormalPpRemain",
+          "time": "0.002",
+          "result": "PASS"
+        },
+        {
+          "name": "eitherDefeatedTeamEndsBattle",
+          "time": "0.0",
+          "result": "PASS"
+        },
+        {
+          "name": "faintedPokemonCannotSwitchIn",
+          "time": "0.0",
+          "result": "PASS"
+        },
+        {
+          "name": "teamListIsProtected",
+          "time": "0.0",
+          "result": "PASS"
+        },
+        {
+          "name": "negativeDamageRejected",
+          "time": "0.002",
+          "result": "PASS"
+        },
+        {
+          "name": "immunityDoesNotDealMinimumDamage",
+          "time": "0.004",
+          "result": "PASS"
+        },
+        {
+          "name": "noPpFallbackAllowsBattleToContinue",
+          "time": "0.001",
+          "result": "PASS"
+        },
+        {
+          "name": "negativeHealingRejected",
+          "time": "0.002",
+          "result": "PASS"
+        },
+        {
+          "name": "invalidAccuracyRejected",
+          "time": "0.001",
+          "result": "PASS"
+        },
+        {
+          "name": "duplicateTeamMemberRejected",
+          "time": "0.001",
+          "result": "PASS"
+        },
+        {
+          "name": "hpClampsToZero",
+          "time": "0.0",
+          "result": "PASS"
+        },
+        {
+          "name": "zeroDefenseRejected",
+          "time": "0.001",
+          "result": "PASS"
+        },
+        {
+          "name": "moveListIsProtected",
+          "time": "0.001",
+          "result": "PASS"
+        }
+      ]
+    },
+    {
+      "class": "com.pokemon.battle.OracleSmokeTest",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "timestamp": null,
+      "cases": [
+        {
+          "name": "oracleCrudRollbackHistoryAndRestart",
+          "time": "2.618",
+          "result": "PASS"
+        }
+      ]
+    },
+    {
+      "class": "com.pokemon.battle.UiTasksTest",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "timestamp": null,
+      "cases": [
+        {
+          "name": "databaseWorkLeavesEdtAndRepeatedActionIsIgnored",
+          "time": "0.127",
+          "result": "PASS"
+        }
+      ]
+    }
+  ]
+}

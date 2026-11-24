@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1120" viewBox="0 0 1400 1120">
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0 1 L9 5 L0 9" fill="none" stroke="#334155" stroke-width="1.6"/></marker><marker id="triangle" markerWidth="15" markerHeight="15" refX="13" refY="7" orient="auto"><path d="M1 1 L13 7 L1 13 Z" fill="white" stroke="#334155" stroke-width="1.4"/></marker></defs>
+<rect width="100%" height="100%" fill="white"/>
+<text x="700" y="38" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#111111" text-anchor="middle">Pokemon Smackdown application architecture</text>
+<rect x="25" y="75" width="650" height="265" rx="4" fill="#E9EFF5" stroke="#536273" stroke-width="2"/>
+<path d="M25 124 H675" stroke="#536273" stroke-width="1.5"/>
+<text x="350.0" y="108" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#111111" text-anchor="middle">Presentation and scheduling</text>
+<text x="42" y="158" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">TeamBuilderWindow and BattleWindow</text>
+<text x="42" y="191" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">TeamLibraryDialog and BattleReportDialog</text>
+<text x="42" y="224" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">DatabaseSettingsDialog</text>
+<text x="42" y="257" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">UiTasks and SwingWorker background work</text>
+<text x="42" y="290" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">Swing updates return to the event dispatch thread</text>
+<rect x="725" y="75" width="650" height="265" rx="4" fill="#E9EFF5" stroke="#536273" stroke-width="2"/>
+<path d="M725 124 H1375" stroke="#536273" stroke-width="1.5"/>
+<text x="1050.0" y="108" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#111111" text-anchor="middle">Services and battle coordination</text>
+<text x="742" y="158" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">AppServices wires concrete dependencies</text>
+<text x="742" y="191" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">TeamService validates saved teams</text>
+<text x="742" y="224" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">BattleHistoryService validates and reports results</text>
+<text x="742" y="257" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">DatabaseService tests and initializes Oracle</text>
+<text x="742" y="290" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">BattleEngine applies battle actions</text>
+<polyline points="675,200 725,200" fill="none" stroke="#334155" stroke-width="2.5" stroke-dasharray="0" marker-end="url(#arrow)"/>
+<rect x="25" y="435" width="650" height="250" rx="4" fill="#EAF4EA" stroke="#536273" stroke-width="2"/>
+<path d="M25 484 H675" stroke="#536273" stroke-width="1.5"/>
+<text x="350.0" y="468" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#111111" text-anchor="middle">Model and report data</text>
+<text x="42" y="518" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">PokemonTeam contains Pokemon objects</text>
+<text x="42" y="551" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">Pokemon contains Move objects</text>
+<text x="42" y="584" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">SavedTeam and BattleRecord are immutable records</text>
+<text x="42" y="617" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">BattleOutcome is WIN, LOSS or FLED</text>
+<text x="42" y="650" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">BattleReport contains rows and summary counts</text>
+<rect x="725" y="435" width="650" height="250" rx="4" fill="#FFF1DC" stroke="#536273" stroke-width="2"/>
+<path d="M725 484 H1375" stroke="#536273" stroke-width="1.5"/>
+<text x="1050.0" y="468" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#111111" text-anchor="middle">Persistence contracts and implementations</text>
+<text x="742" y="518" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">TeamDao implemented by JdbcTeamDao</text>
+<text x="742" y="551" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">BattleDao implemented by JdbcBattleDao</text>
+<text x="742" y="584" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">ConnectionFactory implemented by</text>
+<text x="742" y="617" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">OracleConnectionFactory</text>
+<text x="742" y="650" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">SchemaInitializer and SqlErrors support JDBC</text>
+<polyline points="1050,340 1050,435" fill="none" stroke="#334155" stroke-width="2.5" stroke-dasharray="0" marker-end="url(#arrow)"/>
+<text x="1065" y="392" font-family="Arial, sans-serif" font-size="22" font-weight="400" fill="#111111" text-anchor="start">validated operations</text>
+<polyline points="725,560 675,560" fill="none" stroke="#334155" stroke-width="2.5" stroke-dasharray="0" marker-end="url(#arrow)"/>
+<rect x="725" y="800" width="650" height="245" rx="4" fill="#F0EAF7" stroke="#536273" stroke-width="2"/>
+<path d="M725 849 H1375" stroke="#536273" stroke-width="1.5"/>
+<text x="1050.0" y="833" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#111111" text-anchor="middle">Oracle relational database</text>
+<text x="742" y="883" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">ps_team and ps_team_member</text>
+<text x="742" y="916" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">ps_battle and ps_battle_member</text>
+<text x="742" y="949" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">Parameterized SQL and affected-row checks</text>
+<text x="742" y="982" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">Team and result writes commit atomically</text>
+<text x="742" y="1015" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">Credentials remain in local configuration</text>
+<polyline points="1050,685 1050,800" fill="none" stroke="#334155" stroke-width="2.5" stroke-dasharray="0" marker-end="url(#arrow)"/>
+<text x="1065" y="750" font-family="Arial, sans-serif" font-size="22" font-weight="400" fill="#111111" text-anchor="start">JDBC Thin connections</text>
+<rect x="25" y="800" width="650" height="245" rx="4" fill="#E9EFF5" stroke="#536273" stroke-width="2"/>
+<path d="M25 849 H675" stroke="#536273" stroke-width="1.5"/>
+<text x="350.0" y="833" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#111111" text-anchor="middle">Roster and external assets</text>
+<text x="42" y="883" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">KantoDex and TeamFactory construct Pokemon</text>
+<text x="42" y="916" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">PokeStats reads web stats with fallback values</text>
+<text x="42" y="949" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">SpriteLoader downloads and caches images</text>
+<text x="42" y="982" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">Local resources supply backgrounds and frames</text>
+<text x="42" y="1015" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">External HTTP access is separate from JDBC</text>
+<polyline points="350,800 350,685" fill="none" stroke="#334155" stroke-width="2.5" stroke-dasharray="0" marker-end="url(#arrow)"/>
+<text x="30" y="1090" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">Database credentials and personal saved records are not embedded in this document.</text>
+</svg>

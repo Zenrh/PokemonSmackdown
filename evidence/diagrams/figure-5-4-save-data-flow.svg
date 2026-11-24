@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1220" viewBox="0 0 1400 1220">
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0 1 L9 5 L0 9" fill="none" stroke="#334155" stroke-width="1.6"/></marker><marker id="triangle" markerWidth="15" markerHeight="15" refX="13" refY="7" orient="auto"><path d="M1 1 L13 7 L1 13 Z" fill="white" stroke="#334155" stroke-width="1.4"/></marker></defs>
+<rect width="100%" height="100%" fill="white"/>
+<text x="700" y="38" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#111111" text-anchor="middle">Save or replace a team data flow</text>
+<rect x="80" y="75" width="1240" height="105" rx="4" fill="#E9EFF5" stroke="#536273" stroke-width="2"/>
+<path d="M80 124 H1320" stroke="#536273" stroke-width="1.5"/>
+<text x="700.0" y="108" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#111111" text-anchor="middle">1 Swing listener</text>
+<text x="97" y="158" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">Capture team name, selected record version and a copy of party IDs.</text>
+<polyline points="700,180 700,225" fill="none" stroke="#334155" stroke-width="2.5" stroke-dasharray="0" marker-end="url(#arrow)"/>
+<rect x="80" y="225" width="1240" height="105" rx="4" fill="#E9EFF5" stroke="#536273" stroke-width="2"/>
+<path d="M80 274 H1320" stroke="#536273" stroke-width="1.5"/>
+<text x="700.0" y="258" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#111111" text-anchor="middle">2 UiTasks and SwingWorker</text>
+<text x="97" y="308" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">Disable duplicate actions; run the operation off the event dispatch thread.</text>
+<polyline points="700,330 700,375" fill="none" stroke="#334155" stroke-width="2.5" stroke-dasharray="0" marker-end="url(#arrow)"/>
+<rect x="80" y="375" width="1240" height="105" rx="4" fill="#E9EFF5" stroke="#536273" stroke-width="2"/>
+<path d="M80 424 H1320" stroke="#536273" stroke-width="1.5"/>
+<text x="700.0" y="408" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#111111" text-anchor="middle">3 TeamService</text>
+<text x="97" y="458" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">Validate name, 1..6 unique IDs and the existing record when replacing.</text>
+<polyline points="700,480 700,525" fill="none" stroke="#334155" stroke-width="2.5" stroke-dasharray="0" marker-end="url(#arrow)"/>
+<rect x="80" y="525" width="1240" height="105" rx="4" fill="#E9EFF5" stroke="#536273" stroke-width="2"/>
+<path d="M80 574 H1320" stroke="#536273" stroke-width="1.5"/>
+<text x="700.0" y="558" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#111111" text-anchor="middle">4 JdbcTeamDao and ConnectionFactory</text>
+<text x="97" y="608" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">Open a connection and set autoCommit(false).</text>
+<polyline points="700,630 700,675" fill="none" stroke="#334155" stroke-width="2.5" stroke-dasharray="0" marker-end="url(#arrow)"/>
+<rect x="80" y="675" width="1240" height="105" rx="4" fill="#E9EFF5" stroke="#536273" stroke-width="2"/>
+<path d="M80 724 H1320" stroke="#536273" stroke-width="1.5"/>
+<text x="700.0" y="708" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#111111" text-anchor="middle">5 Parameterized writes</text>
+<text x="97" y="758" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">Insert/update the team header; insert/replace ordered member rows.</text>
+<rect x="80" y="865" width="590" height="140" rx="4" fill="#EAF4EA" stroke="#536273" stroke-width="2"/>
+<path d="M80 914 H670" stroke="#536273" stroke-width="1.5"/>
+<text x="375.0" y="898" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#111111" text-anchor="middle">Success path</text>
+<text x="97" y="948" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">Check affected rows and commit.</text>
+<text x="97" y="981" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">Return the committed SavedTeam record.</text>
+<rect x="730" y="865" width="590" height="140" rx="4" fill="#FBECEC" stroke="#536273" stroke-width="2"/>
+<path d="M730 914 H1320" stroke="#536273" stroke-width="1.5"/>
+<text x="1025.0" y="898" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#111111" text-anchor="middle">Failure path</text>
+<text x="747" y="948" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">Roll back on SQL/runtime failure.</text>
+<text x="747" y="981" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">Translate errors; preserve the current party.</text>
+<polyline points="700,780 700,825 375,825 375,865" fill="none" stroke="#334155" stroke-width="2.5" stroke-dasharray="0" marker-end="url(#arrow)"/>
+<polyline points="700,825 1025,825 1025,865" fill="none" stroke="#334155" stroke-width="2.5" stroke-dasharray="0" marker-end="url(#arrow)"/>
+<rect x="80" y="1080" width="1240" height="110" rx="4" fill="#E9EFF5" stroke="#536273" stroke-width="2"/>
+<path d="M80 1129 H1320" stroke="#536273" stroke-width="1.5"/>
+<text x="700.0" y="1113" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#111111" text-anchor="middle">6 SwingWorker done on the event dispatch thread</text>
+<text x="97" y="1163" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">Enable controls; reload committed rows on success or show an actionable failure message.</text>
+<polyline points="375,1005 375,1045 700,1045 700,1080" fill="none" stroke="#334155" stroke-width="2.5" stroke-dasharray="0" marker-end="url(#arrow)"/>
+<polyline points="1025,1005 1025,1045 700,1045" fill="none" stroke="#334155" stroke-width="2.5" stroke-dasharray="0" marker-end="url(#arrow)"/>
+</svg>

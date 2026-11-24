@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1320" viewBox="0 0 1400 1320">
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0 1 L9 5 L0 9" fill="none" stroke="#334155" stroke-width="1.6"/></marker><marker id="triangle" markerWidth="15" markerHeight="15" refX="13" refY="7" orient="auto"><path d="M1 1 L13 7 L1 13 Z" fill="white" stroke="#334155" stroke-width="1.4"/></marker></defs>
+<rect width="100%" height="100%" fill="white"/>
+<text x="700" y="38" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#111111" text-anchor="middle">Saved team and battle history persistence UML</text>
+<rect x="20" y="75" width="620" height="185" rx="4" fill="#E9EFF5" stroke="#536273" stroke-width="2"/>
+<path d="M20 124 H640" stroke="#536273" stroke-width="1.5"/>
+<text x="330.0" y="108" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#111111" text-anchor="middle">TeamService</text>
+<text x="37" y="158" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">- teams: TeamDao</text>
+<text x="37" y="191" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">+ search(filter), load(id), create(name, ids)</text>
+<text x="37" y="224" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">+ update(original, name, ids), delete(original)</text>
+<rect x="760" y="75" width="620" height="185" rx="4" fill="#E9EFF5" stroke="#536273" stroke-width="2"/>
+<path d="M760 124 H1380" stroke="#536273" stroke-width="1.5"/>
+<text x="1070.0" y="108" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#111111" text-anchor="middle">BattleHistoryService</text>
+<text x="777" y="158" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">- battles: BattleDao</text>
+<text x="777" y="191" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">+ save(BattleRecord)</text>
+<text x="777" y="224" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">+ report(from, to, outcome): BattleReport</text>
+<rect x="20" y="355" width="620" height="185" rx="4" fill="#FFF1DC" stroke="#536273" stroke-width="2"/>
+<path d="M20 404 H640" stroke="#536273" stroke-width="1.5"/>
+<text x="330.0" y="388" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#111111" text-anchor="middle">&lt;&lt;interface&gt;&gt; TeamDao</text>
+<text x="37" y="438" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">+ findAll(filter), findById(id)</text>
+<text x="37" y="471" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">+ create(name, ids), update(id, version, name, ids)</text>
+<text x="37" y="504" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">+ delete(id, version)</text>
+<rect x="760" y="355" width="620" height="185" rx="4" fill="#FFF1DC" stroke="#536273" stroke-width="2"/>
+<path d="M760 404 H1380" stroke="#536273" stroke-width="1.5"/>
+<text x="1070.0" y="388" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#111111" text-anchor="middle">&lt;&lt;interface&gt;&gt; BattleDao</text>
+<text x="777" y="438" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">+ save(BattleRecord)</text>
+<text x="777" y="471" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">+ find(from, to, outcome): List&lt;BattleRecord&gt;</text>
+<text x="777" y="504" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">Saved result retries use the same battle key</text>
+<polyline points="330,260 330,355" fill="none" stroke="#334155" stroke-width="2.5" stroke-dasharray="0" marker-end="url(#arrow)"/>
+<text x="350" y="315" font-family="Arial, sans-serif" font-size="22" font-weight="400" fill="#111111" text-anchor="start">depends on</text>
+<polyline points="1070,260 1070,355" fill="none" stroke="#334155" stroke-width="2.5" stroke-dasharray="0" marker-end="url(#arrow)"/>
+<text x="1090" y="315" font-family="Arial, sans-serif" font-size="22" font-weight="400" fill="#111111" text-anchor="start">depends on</text>
+<rect x="20" y="640" width="620" height="150" rx="4" fill="#EAF4EA" stroke="#536273" stroke-width="2"/>
+<path d="M20 689 H640" stroke="#536273" stroke-width="1.5"/>
+<text x="330.0" y="673" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#111111" text-anchor="middle">JdbcTeamDao</text>
+<text x="37" y="723" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">- connections: ConnectionFactory</text>
+<text x="37" y="756" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">Implements all TeamDao operations</text>
+<rect x="760" y="640" width="620" height="150" rx="4" fill="#EAF4EA" stroke="#536273" stroke-width="2"/>
+<path d="M760 689 H1380" stroke="#536273" stroke-width="1.5"/>
+<text x="1070.0" y="673" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#111111" text-anchor="middle">JdbcBattleDao</text>
+<text x="777" y="723" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">- connections: ConnectionFactory</text>
+<text x="777" y="756" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">Implements all BattleDao operations</text>
+<polyline points="330,640 330,540" fill="none" stroke="#334155" stroke-width="2.5" stroke-dasharray="8" marker-end="url(#triangle)"/>
+<text x="350" y="595" font-family="Arial, sans-serif" font-size="22" font-weight="400" fill="#111111" text-anchor="start">implements</text>
+<polyline points="1070,640 1070,540" fill="none" stroke="#334155" stroke-width="2.5" stroke-dasharray="8" marker-end="url(#triangle)"/>
+<text x="1090" y="595" font-family="Arial, sans-serif" font-size="22" font-weight="400" fill="#111111" text-anchor="start">implements</text>
+<rect x="390" y="890" width="620" height="120" rx="4" fill="#FFF1DC" stroke="#536273" stroke-width="2"/>
+<path d="M390 939 H1010" stroke="#536273" stroke-width="1.5"/>
+<text x="700.0" y="923" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#111111" text-anchor="middle">&lt;&lt;interface&gt;&gt; ConnectionFactory</text>
+<text x="407" y="973" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">+ open(): java.sql.Connection</text>
+<polyline points="330,790 330,950 390,950" fill="none" stroke="#334155" stroke-width="2.5" stroke-dasharray="0" marker-end="url(#arrow)"/>
+<polyline points="1070,790 1070,950 1010,950" fill="none" stroke="#334155" stroke-width="2.5" stroke-dasharray="0" marker-end="url(#arrow)"/>
+<rect x="390" y="1110" width="620" height="150" rx="4" fill="#EAF4EA" stroke="#536273" stroke-width="2"/>
+<path d="M390 1159 H1010" stroke="#536273" stroke-width="1.5"/>
+<text x="700.0" y="1143" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#111111" text-anchor="middle">OracleConnectionFactory</text>
+<text x="407" y="1193" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">- settings: DatabaseConfig (optional override)</text>
+<text x="407" y="1226" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">+ open(): Connection</text>
+<polyline points="700,1110 700,1010" fill="none" stroke="#334155" stroke-width="2.5" stroke-dasharray="8" marker-end="url(#triangle)"/>
+<text x="720" y="1070" font-family="Arial, sans-serif" font-size="22" font-weight="400" fill="#111111" text-anchor="start">implements</text>
+<text x="25" y="1300" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#111111" text-anchor="start">Solid arrows are dependencies. Dashed hollow-triangle arrows are interface implementations.</text>
+</svg>
